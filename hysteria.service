@@ -1,0 +1,13 @@
+[Unit]
+Description=Hysteria2 Server
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/hysteria
+ExecStart=/opt/hysteria/hysteria-linux-amd64 server -c /opt/hysteria/server.yaml
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
